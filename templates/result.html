@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/style-result.css">
+    <title>Car Price Prediction - Result</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Car Price Prediction</h1>
+            <h2>Result</h2>
+        </header>
+        <section class="input-values">
+            <h3>Your Input Values:</h3>
+            <ul>
+                {% for i in range(model_input|length) %}
+                <li><strong>{{ model_input[i].name }}:</strong> {{ input_values[i] }}</li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section class="estimated-prices">
+            <h3>Estimated Car Prices:</h3>
+            <ul>
+                <li class="price">{{ car_price }}</li>
+            </ul>
+        </section>
+        <a href="{{ url_for('ml_predict', model_name=sender) }}" class="back-link">Back to Upload</a>
+    </div>
+</body>
+</html>

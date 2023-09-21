@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <script src="../static/home.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/{{page_style}}.css">
+    <title>Car Price Prediction</title>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Car Price</a>
+                <div class="dropdown-content">
+                    <a href="/linear_regression">Linear Regression</a>
+                    <a href="/random_forrest">Random Forrest</a>
+                    <a href="/logistic_regression">logistic regression</a>
+                </div>
+            </li>
+            <!-- <li><a href="/">Home</a></li> -->
+        </ul>
+    </nav>
+
+    <h1>Car Price Prediction</h1>
+
+    <p>{{ describe }}</p>
+
+    <div  class="form-container">
+        <form method="post">
+            {% for input_info in model_input %}
+            <label for="{{ input_info.name }}">{{ input_info.name }}:</label>
+            <input type="text" id="{{ input_info.name }}" name="{{ input_info.name }}" ><br>
+            {% endfor %}
+            <input type="submit" value="Predict">    
+            
+        </form>
+    </div>
+
+    <!-- <div class="button-container">
+        <a href="/" class="button">home</a>
+    </div> -->
+    {% if error_message %}
+    <p class="error">{{ error_message }}</p>
+    {% endif %}
+
+</body>
+</html>
