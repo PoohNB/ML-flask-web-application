@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2 
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
@@ -21,4 +22,4 @@ jobs:
           python -m pip install Flask==2.2.2 numpy==1.24.3 scikit-learn==1.2.2 cloudpickle mlflow
 
       - name: Run tests
-        run: python test-script.py
+        run: python tests/test-script.py
