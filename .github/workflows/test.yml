@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          python -m pip install Flask==2.2.2 numpy==1.24.3 scikit-learn==1.2.2 cloudpickle mlflow
+          python -m pip -r ../requirements.txt
 
       - name: Run tests
-        run: python .github/workflows/tests/test-script.py
+        run: python ../tests/test-script.py
