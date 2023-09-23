@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="../static/starwars.css">
+    <script src="../static/home.js"></script>
+    <meta charset="utf-8">
+    <title>PooH ml2023</title>
+</head>
+<body>
+    <!-- Star Wars Opening Crawl -->
+    <div class="star-wars">
+        <div class="crawl">
+            <p>Episode ML2023</p>
+            <h1>Welcome to PooH's Machine Learning</h1>
+            <p>It is a time of advanced machine learning. Explore our models and predict car prices with the power of data.</p>
+        </div>
+        <audio src="../static/Star_Wars_Main_Theme_Song.mp3" autoplay loop></audio>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Car Price</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('ml_predict', model_name='linear_regression') }}">Linear Regression</a>
+                    <a href="{{ url_for('ml_predict', model_name='random_forrest') }}">Random Forrest</a>
+                    <a href="{{ url_for('ml_predict', model_name='logistic_regression') }}">Logistic Regression</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="main-content">
+        <p>
+            Explore our advanced machine learning models, you can go to car price prediction website through the navigation bar.
+            The new one is linear regression.
+        </p>
+        <button class="explore-button" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Explore Now</button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 My Company</p>
+    </footer>
+</body>
+</html>

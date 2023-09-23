@@ -5,6 +5,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f8f8f8;
+    margin-bottom: 30px;
+    overflow: auto;
+
 }
 
 header {
@@ -61,9 +64,21 @@ nav li a:hover {
 
 
 .main-content {
-    text-align: center;
-    margin: 20px;
+    max-width: 800px;
+    margin: 30px auto;
+    margin-bottom: 100px;
+    padding: 20px;
+    background-color: #a9a9a9;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: auto; /* or scroll, hidden, etc. */
 }
+
+.sub-content {
+    margin-top: 20px;
+    
+}
+
 
 .explore-button {
     background-color: #333;
@@ -89,3 +104,4 @@ footer {
     bottom: 0;
     width: 100%;
 }
+

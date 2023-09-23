@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template, jsonify
+from flask import Flask, request, render_template, send_from_directory
 import pickle
 import numpy as np
 import json
@@ -63,20 +63,24 @@ model_info =   {
 
 
                 "linear_regression":{"describe":"""
-                                Welcome to our Car Price Prediction website. Input the information inside the block and click 'predict'. 
-                                Eventhought it's score no better than random forrest one, this model is the best linear regression model from more than hundred experiments on parameter.  """,
+                                This algorithm is linear regression used polynomial tranfrom tachnique,
+                                 Input the information about car inside the block below and click 'predict'. it will show car price result. 
+                                Eventhought it's score no better than random forrest one,
+                                      this model is the best linear regression model from more than hundred experiments on parameter. 
+                                      """,
                                 "page_style":'night',
                                 "prediction":predictor(model_type="regression",polynomial_degree = 2,bias= True)},
 
-                "random_forrest":{"describe":"""
-                                Welcome to our Car Price Prediction website. 
-                                This platform allows you to input relevant information about a car and receive a predicted price based on our machine learning model. The algorithm used is Random Forest.
-                                 Simply fill in the details below and click 'Predict' to see the estimated price. If you're unsure about any information, don't worry; it will be filled with default data.""",
+                "random_forrest":{"describe":""" 
+                                This algorithm is Random Forest.This platform allows you to input relevant information about a car and receive a predicted price based on our machine learning model. 
+                                 Simply fill in the block below and click 'Predict' to see the estimated price. 
+                                  If you're unsure about any information, don't worry; it will be filled with default data.""",
                                  "page_style":'day',
                                  "prediction":predictor(model_type="regression")},
                                  
                 "logistic_regression":{"describe":"""
-                                        There are four info that we need 
+                                This algorithm is logistic regression , It predict 4 level of price.  
+                                       Input the information about car inside the block below and click 'predict' to see if this car price are "Budget-Friendly","Mid-Range","Premium" or "Luxury".                                         
                                         """,
                                         "page_style":'future',
                                         "prediction":predictor(model_type="classification",
@@ -110,6 +114,7 @@ for k,v in model_info.items():
 def create_app():
 
     app = Flask(__name__)
+
 
     @app.route('/')
     def main_home():

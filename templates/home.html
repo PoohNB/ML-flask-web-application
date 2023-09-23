@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <link rel="stylesheet" type="text/css" href="../static/home.css">
     <script src="../static/home.js"></script>
     <meta charset="utf-8">
     <title>PooH ml2023</title>
 </head>
+
 <body>
     <header>
         <h1>Welcome to PooH's machine learning</h1>
     </header>
-    
+
     <nav>
         <ul>
             <li><a href="/">Home</a></li>
@@ -27,17 +29,60 @@
     </nav>
 
     <section class="main-content">
-        
+
+        <h2> Description </h2>
+        <p>
+            Welcome to the Machine Learning Hub of AIT's engineering program! This website serves as a platform to
+            explore the fascinating world of machine learning and its applications.
+        </p>
 
         <p>
-            Explore our advanced machine learning models, you can go to carprice prediction websit though navigation bar.
-            the new one is linear regression
+            We've implemented Flask for seamless deployment, ensuring you have a smooth experience while diving into the
+            world of AI.
         </p>
-        <button class="explore-button" onclick="window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'">Explore Now</button>
+
+        <div class="sub-content">
+            <h3> ML Techniques Overview </h3>
+            <p>
+                <strong>Regression:</strong><br>
+                - Linear Regression<br>
+                - Random Forest<br>
+                <br>
+                <strong>Classification:</strong><br>
+                - Logistic Regression (like linear regression but use activation function to classify class and modify loss function)<br>
+                - Naive Bayesian(classify sample by use the distribution -> mean,std)<br>
+                - K Nearest Neighbor (KNN)(KNN finds the nearest 'k' samples in training data to predict a sample)<br>
+                - Support Vector Machine (SVM)(Ideal for binary classification, it finds the optimal plane, or hyperplane, to separate two groups)<br>
+                <br>
+                <strong>Gradient Algorithms:</strong><br>
+                - Batch<br>
+                - Mini Batch<br>
+                - Stochastic<br>
+                <br>
+                Keywords to know:<br>
+                - With replacement => random pick data<br>
+                - imputation => fill the missing data<br>
+            </p>
+        </div>
+
+        <div class="sub-content">
+            <h4> Further Exploration </h4>
+            <p>
+                Dive deeper into the world of ML by exploring our notebooks and code on GitHub.
+            </p>
+            <button class="explore-button" onclick="window.location.href='https://github.com/iforgeti/ML-homework.git'">
+                Explore on GitHub
+            </button>
+        </div>
+
     </section>
+
+
+    <audio src="static/Rick Roll Sound Effect.mp3" autoplay></audio>
 
     <footer>
         <p>&copy; 2023 Your Company</p>
     </footer>
 </body>
+
 </html>
