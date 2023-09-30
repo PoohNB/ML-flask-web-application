@@ -18,19 +18,7 @@
     </div>
 
     <!-- Navigation Bar -->
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-            <li class="dropdown">
-                <a href="#">Car Price</a>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('ml_predict', model_name='linear_regression') }}">Linear Regression</a>
-                    <a href="{{ url_for('ml_predict', model_name='random_forrest') }}">Random Forrest</a>
-                    <a href="{{ url_for('ml_predict', model_name='logistic_regression') }}">Logistic Regression</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
+    {% include 'nav.html' %}
 
     <!-- Main Content -->
     <section class="main-content">

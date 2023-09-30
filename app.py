@@ -5,14 +5,15 @@ import json
 from sklearn.preprocessing import PolynomialFeatures
 
 
-class predictor:
+class ML_predictor:
 
-    def __init__(self,bias=False,catagory_label=range(20),model_type="regression",polynomial_degree=0):
+    def __init__(self,post_process=None,bias=False,catagory_label=range(20),model_type="regression",polynomial_degree=0):
 
         self.polynomial_degree = polynomial_degree
         self.type = model_type
         self.catagory_label = catagory_label
         self.bias = bias
+        self.post_process=post_process
 
     def predict(self,model,input_values):
 
@@ -37,7 +38,10 @@ class predictor:
 
         if self.type == "regression":
 
-            car_price = np.exp(model["model"].predict(scaled_input)[0])
+            car_price = model["model"].predict(scaled_input)[0]
+
+            if self.post_process:
+                car_price = self.post_process(car_price)
 
             if car_price == float('inf') or car_price == float('-inf'):
                 output = "It's priceless, you never have enough money for it "
@@ -69,21 +73,21 @@ model_info =   {
                                       this model is the best linear regression model from more than hundred experiments on parameter. 
                                       """,
                                 "page_style":'night',
-                                "prediction":predictor(model_type="regression",polynomial_degree = 2,bias= True)},
+                                "prediction":ML_predictor(post_process=np.exp,model_type="regression",polynomial_degree = 2,bias= True)},
 
                 "random_forrest":{"describe":""" 
                                 This algorithm is Random Forest.This platform allows you to input relevant information about a car and receive a predicted price based on our machine learning model. 
                                  Simply fill in the block below and click 'Predict' to see the estimated price. 
                                   If you're unsure about any information, don't worry; it will be filled with default data.""",
                                  "page_style":'day',
-                                 "prediction":predictor(model_type="regression")},
+                                 "prediction":ML_predictor(post_process=np.exp,model_type="regression")},
                                  
                 "logistic_regression":{"describe":"""
                                 This algorithm is logistic regression , It predict 4 level of price.  
                                        Input the information about car inside the block below and click 'predict' to see if this car price are "Budget-Friendly","Mid-Range","Premium" or "Luxury".                                         
                                         """,
                                         "page_style":'future',
-                                        "prediction":predictor(model_type="classification",
+                                        "prediction":ML_predictor(model_type="classification",
                                                                catagory_label={0:"Budget-Friendly",1:"Mid-Range",2:"Premium",3:"Luxury"},
                                                                bias=True)} 
                 }

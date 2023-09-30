@@ -1,0 +1,19 @@
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li class="dropdown">
+            <a href="#">Car Price</a>
+            <div class="dropdown-content">
+                <a href="{{ url_for('ml_predict', model_name='linear_regression') }}">Linear Regression</a>
+                <a href="{{ url_for('ml_predict', model_name='random_forrest') }}">Random Forrest</a>
+                <a href="{{ url_for('ml_predict', model_name='logistic_regression') }}">logistic regression</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="#">deep learning</a>
+            <div class="dropdown-content">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">reinforcement</a>
+            </div>
+        </li>
+    </ul>
+</nav>
