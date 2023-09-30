@@ -23,7 +23,7 @@ the input.txt is the input info for the model that contain 3 thing
 
 input.txt
 
-```
+```json
 
 [  
 {"name": "engine (CC)", "type": "int", "default": 1248},  
