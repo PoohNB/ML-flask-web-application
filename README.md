@@ -22,13 +22,16 @@ the input.txt is the input info for the model that contain 3 thing
 3. default value for that input
 
 input.txt
-```json
+
+```
+
 [  
 {"name": "engine (CC)", "type": "int", "default": 1248},  
 {"name": "max_power (bhp)", "type": "float", "default": 92.31},  
 {"name": "mileage (kmpl)", "type": "float", "default": 19.37},  
 {"name": "year", "type": "int", "default": 2015}  
-]  
+]
+
 ```
 
 2. edit nav.html
