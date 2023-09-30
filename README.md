@@ -60,7 +60,7 @@ input.txt
 
 3. edit the model_info in app.py
 
-   this may look a bit tough , but you just need to add something like
+   this may look a bit tough , but you just need to add something like this to model_info dict in app.py
    ```python
    your_model_folder_name:{"describe":"""
                                      you model describetion
