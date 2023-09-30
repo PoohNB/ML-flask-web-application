@@ -17,23 +17,23 @@ models
     - input.txt
    
 the input.txt is the input info for the model that contain 3 thing 
-1. name of input for show on the web
-2. input type *right now only support float,int
+1. Name of the input parameter (to be displayed on the web)
+2. Input type (currently supports float and int)
 3. default value for that input
 
 input.txt
-
+'''json
 [  
 {"name": "engine (CC)", "type": "int", "default": 1248},  
 {"name": "max_power (bhp)", "type": "float", "default": 92.31},  
 {"name": "mileage (kmpl)", "type": "float", "default": 19.37},  
 {"name": "year", "type": "int", "default": 2015}  
 ]  
-
+'''
 
 2. edit nav.html
 
-'''
+'''html
 <nav>
     <ul>
         <li><a href="/">Home</a></li>
