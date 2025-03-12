@@ -60,7 +60,7 @@ input.txt
 
 3. edit the model_info in app.py
 
-   this may look a bit tough , but you just need to add something like this to model_info dict in app.py
+   this may look a bit tough , but you just need to add something like
    ```python
    your_model_folder_name:{"describe":"""
                                      you model describetion
@@ -68,7 +68,7 @@ input.txt
                                 "page_style":'name of css that you want to use in this end point', # you can use day,night or future ,or you can create new one
                                 "prediction":you object to predict the output } # see the example in app.py
    ```
-see tutorial how to create machine learning model! [here](https://github.com/PoohNB/MachineLearning.git)
+see tutorial how to create machine learning model! [here](https://github.com/iforgeti/ML-homework.git)
 
 curently support 
 - classification
