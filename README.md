@@ -68,7 +68,7 @@ input.txt
                                 "page_style":'name of css that you want to use in this end point', # you can use day,night or future ,or you can create new one
                                 "prediction":you object to predict the output } # see the example in app.py
    ```
-see tutorial how to create machine learning model! [here](https://github.com/iforgeti/ML-homework.git)
+see tutorial how to create machine learning model! [here](https://github.com/PoohNB/ML-homework.git)
 
 curently support 
 - classification
