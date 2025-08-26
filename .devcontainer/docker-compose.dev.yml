@@ -1,0 +1,11 @@
+
+
+services:
+  mlweb-dev:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+      target: dev
+    environment:
+      - ENV=dev
+    command: sleep infinity

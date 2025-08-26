@@ -1,0 +1,10 @@
+
+services:
+  mlweb:
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    ports:
+      - "90:90"
+    volumes:
+      - .:/APP
