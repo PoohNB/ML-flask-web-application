@@ -16,7 +16,7 @@ RUN pip install pytest bandit safety
 FROM python:3.8-slim AS prod
 
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
-WORKDIR /app
+WORKDIR /APP
 COPY --from=base /usr/local /usr/local  
 COPY . .
 EXPOSE 90

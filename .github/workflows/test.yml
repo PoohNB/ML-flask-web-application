@@ -17,4 +17,6 @@ jobs:
           docker compose -f .devcontainer/docker-compose.yml build
 
       - name: Run tests
-        run: python tests/test-script.py
+        run: |
+          docker compose -f .devcontainer/docker-compose.yml run --rm mlweb-dev \
+           bash -c "pytest tests/ -v && bandit -r src && safety check || true"
