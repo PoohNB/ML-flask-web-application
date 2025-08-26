@@ -1,9 +1,8 @@
 name: Test ML Flask App
 
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: [main]
 
 jobs:
   test:
@@ -11,16 +10,13 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+        uses: actions/checkout@v4
 
-      - name: Install dependencies
+      - name: Build Dev Container
         run: |
-          python -m pip install --upgrade pip
-          python -m pip install -r requirements.txt
+          docker compose -f .devcontainer/docker-compose.yml build
 
       - name: Run tests
-        run: python tests/test-script.py
+        run: |
+          docker compose -f .devcontainer/docker-compose.yml run --rm mlweb-dev \
+           bash -c "pytest tests/ -v && bandit -r src && safety check || true"

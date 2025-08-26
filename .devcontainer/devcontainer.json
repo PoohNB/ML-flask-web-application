@@ -3,7 +3,7 @@
 {
 	"name": "ml-app",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"dockerComposeFile": "docker-compose.dev.yml",
+	"dockerComposeFile": "docker-compose.yml",
 
 	"service": "mlweb-dev",
 	"workspaceFolder": "/APP",
