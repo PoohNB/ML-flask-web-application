@@ -8,4 +8,6 @@ services:
       target: dev
     environment:
       - ENV=dev
+    volumes:
+      - ..:/APP:cached
     command: sleep infinity
