@@ -7,5 +7,9 @@ services:
       target: prod
     ports:
       - "90:90"
-    volumes:
-      - .:/APP
+    healthcheck:
+      test: ["CMD-SHELL", "curl --fail http://localhost:90/healthz || exit 1"]
+      interval: 10s     # how often to run the check
+      timeout: 3s       # how long to wait for a response
+      retries: 5        # how many times to retry before marking as unhealthy
+      start_period: 10s # optional: give Gunicorn a few seconds to boot

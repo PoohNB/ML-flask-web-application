@@ -1,8 +1,9 @@
-from flask import Flask, request, render_template, send_from_directory
+from flask import Flask, request, render_template, jsonify
 import pickle
 import numpy as np
 import json
 from sklearn.preprocessing import PolynomialFeatures
+
 
 
 class ML_predictor:
@@ -180,6 +181,10 @@ def create_app():
                             model_input=model_info[model_name]["input"] ,
                             describe= model_info[model_name]["describe"], 
                             page_style = model_info[model_name]["page_style"])
+
+    @app.get("/healthz")
+    def healthz():
+        return jsonify(status="ok"), 200
 
     return app
 
