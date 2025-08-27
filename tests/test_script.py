@@ -65,7 +65,7 @@ def test_ml_predict(client):
             input_info = json.load(file)
 
         for input in input_info: 
-            input_data[input["name"]] = {input["default"]}
+            input_data[input["name"]] = input["default"]
 
 
         # Send a POST request to the ml_predict route
