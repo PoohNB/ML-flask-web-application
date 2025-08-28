@@ -4,6 +4,8 @@ FROM python:3.8-slim AS base
 
 WORKDIR /APP
 
+ENV PYTHONPATH="/APP"
+
 COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
@@ -11,6 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 FROM base AS dev 
 # Install required packages using pip
+COPY . .
 RUN pip install pytest bandit safety
 
 

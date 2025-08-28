@@ -7,6 +7,9 @@
 
 	"service": "mlweb-dev",
 	"workspaceFolder": "/APP",
+	// "mounts": [
+    // 			"source=${localWorkspaceFolder},target=/APP,type=bind,consistency=cached"
+  	// 			],
 	"remoteEnv": {
 		"PYTHONPATH": "/workspaces/ML-flask-web-application"
 	},
