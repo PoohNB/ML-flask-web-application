@@ -20,4 +20,4 @@ ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 WORKDIR /APP
 COPY --from=base /usr/local /usr/local 
 COPY . .
-CMD ["gunicorn","-c","gunicorn/gunicorn.conf.py","wsgi:app"]
+CMD ["gunicorn","-c","configs/gunicorn.conf.py","wsgi:app"]

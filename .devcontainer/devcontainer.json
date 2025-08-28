@@ -7,6 +7,9 @@
 
 	"service": "mlweb-dev",
 	"workspaceFolder": "/APP",
+	"remoteEnv": {
+		"PYTHONPATH": "/workspaces/ML-flask-web-application"
+	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
