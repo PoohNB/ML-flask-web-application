@@ -9,6 +9,7 @@ services:
       - "90:90"
     # volumes:
     #   - ..:/APP:ro,cached
+    restart: on-failure
     healthcheck:
       test: ["CMD-SHELL", "curl --fail http://localhost:90/healthz || exit 1"]
       interval: 10s     # how often to run the check

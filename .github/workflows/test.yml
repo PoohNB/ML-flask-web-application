@@ -26,8 +26,8 @@ jobs:
       - name: Start Prod Container
         run: docker compose -f .devcontainer/docker-compose.prod.yml up -d --build
 
-      - name: Wait for healthcheck
-        run: docker compose -f .devcontainer/docker-compose.prod.yml wait mlweb
+      - name: healthcheck
+        run: docker compose -f .devcontainer/docker-compose.prod.yml --wait --abort-on-container-exit
 
       # Diagnostics on failure
       - name: Show logs on failure
