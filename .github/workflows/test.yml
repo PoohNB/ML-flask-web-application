@@ -22,17 +22,22 @@ jobs:
           docker compose -f .devcontainer/docker-compose.yml run --rm mlweb-dev \
             bash -c "pytest tests/ -v && bandit -r . -c bandit.yml"
 
-      # Prod container: build/run & wait for health
-      - name: Start Prod Container
-        run: docker compose -f .devcontainer/docker-compose.prod.yml up -d --build
+      - name: Stop Dev Container
+        if: always()
+        run: docker compose -f .devcontainer/docker-compose.yml down -v
 
-      - name: healthcheck
-        run: docker compose -f .devcontainer/docker-compose.prod.yml --wait --abort-on-container-exit
+      # Prod container: build/run & wait for health
+      - name: Build & start check product healthy
+        run: |
+          docker compose -f .devcontainer/docker-compose.prod.yml up -d --build \
+            --wait --wait-timeout 120
 
       # Diagnostics on failure
       - name: Show logs on failure
         if: failure()
-        run: docker compose -f .devcontainer/docker-compose.prod.yml logs --no-color
+        run: |
+          docker compose -f .devcontainer/docker-compose.prod.yml ps
+          docker compose -f .devcontainer/docker-compose.prod.yml logs --no-color
 
       # Always clean up
       - name: Stop Prod Container
