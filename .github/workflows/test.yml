@@ -20,7 +20,7 @@ jobs:
       - name: Run unit tests and security checks
         run: |
           docker compose -f .devcontainer/docker-compose.yml run --rm mlweb-dev \
-            bash -c "pytest tests/ -v && bandit -r ."
+            bash -c "pytest tests/ -v && bandit -r . -c bandit.yml"
 
       # Prod container: build/run & wait for health
       - name: Start Prod Container
