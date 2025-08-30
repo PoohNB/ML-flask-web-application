@@ -1,0 +1,7 @@
+{
+  "opset": 15,
+  "n_features": 4,
+  "estimator": "RandomForestRegressor",
+  "is_classifier": false,
+  "is_regressor": true
+}
