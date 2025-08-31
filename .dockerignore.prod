@@ -1,0 +1,6 @@
+.github/
+.git/
+.devcontainer/
+bandit.yml
+tests/
+folder-structure.txt

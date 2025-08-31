@@ -2,13 +2,11 @@
 services:
   mlweb:
     build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
+      context: .
+      dockerfile: Dockerfile
       target: prod
     ports:
       - "90:90"
-    # volumes:
-    #   - ..:/APP:ro,cached
     restart: on-failure
     healthcheck:
       test: ["CMD-SHELL", "curl --fail http://localhost:90/healthz || exit 1"]
