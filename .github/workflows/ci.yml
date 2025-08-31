@@ -39,8 +39,8 @@ jobs:
       # Prod container: build/run & wait for health
       - name: Build Product
         run: |
-          cp .devcontainer/.dockerignore.prod .dockerignore
-          docker compose -f .devcontainer/docker-compose.prod.yml up -d
+          cp .dockerignore.prod .dockerignore
+          docker compose -f docker-compose.prod.yml up -d
 
       - name: Check healthz
         uses: jtalk/url-health-check-action@v4
@@ -58,10 +58,10 @@ jobs:
       - name: Show logs on failure
         if: failure()
         run: |
-          docker compose -f .devcontainer/docker-compose.prod.yml ps
-          docker compose -f .devcontainer/docker-compose.prod.yml logs --no-color
+          docker compose -f docker-compose.prod.yml ps
+          docker compose -f docker-compose.prod.yml logs --no-color
 
       # Always clean up
       - name: Stop Prod Container
         if: always()
-        run: docker compose -f .devcontainer/docker-compose.prod.yml down -v
+        run: docker compose -f docker-compose.prod.yml down -v
