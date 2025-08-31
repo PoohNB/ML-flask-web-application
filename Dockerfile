@@ -25,9 +25,6 @@ FROM python:3.8-slim AS prod
 
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 
-RUN apt-get update \
- && apt-get install -y --no-install-recommends curl \
- && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /APP
 COPY --from=base /usr/local /usr/local 
