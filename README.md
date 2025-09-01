@@ -1,8 +1,17 @@
 # ML-flask-web-application
 
-this repository is flask website for deploy machine learning model
+this repository is flask website for deploy machine learning model [see website](https://mlcar.onrender.com/)
 
-## quick guide
+## installation
+
+have to install docker first
+
+```
+cp .dockerignore.prod .dockerignore
+docker compose -f docker-compose.prod.yml up -d 
+```
+
+## quick guide for edit
 
 1. add your model
 
